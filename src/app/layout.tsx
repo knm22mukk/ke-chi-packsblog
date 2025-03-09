@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import '@/globals.css';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'けーちー包装紙材ブログ',
@@ -14,7 +15,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body>{children}</body>
+      <body>
+        <div className='flex justify-center spece-4 p-10'>
+          <Link href='/'>home</Link>
+          <Link href='/about'>about</Link>
+          <Link href='/blog'>blog</Link>
+          <Link href='/contact'>contact</Link>
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
