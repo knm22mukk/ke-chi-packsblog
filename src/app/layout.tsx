@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/globals.css';
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -16,12 +17,7 @@ export default function RootLayout({
   return (
     <html lang='ja'>
       <body>
-        <div className='flex justify-center spece-4 p-10'>
-          <Link href='/'>home</Link>
-          <Link href='/about'>about</Link>
-          <Link href='/blog'>blog</Link>
-          <Link href='/contact'>contact</Link>
-        </div>
+        <Navbar />
         {children}
       </body>
     </html>
