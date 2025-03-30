@@ -14,15 +14,9 @@ export default function MobileNav() {
 
   return (
     <>
-      {menuOpen ? (
-        <IconButton type='button' onClick={handleClick}>
-          <XMarkIcon />
-        </IconButton>
-      ) : (
-        <IconButton type='button' onClick={handleClick}>
-          <Bars3Icon />
-        </IconButton>
-      )}
+      <IconButton type='button' onClick={handleClick}>
+        {menuOpen ? <XMarkIcon /> : <Bars3Icon />}
+      </IconButton>
       <div
         className={`fixed left-0 top-24 z-10 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -34,7 +28,7 @@ export default function MobileNav() {
               <Link
                 key={link.title}
                 href={link.path}
-                className='flex justify-center px-4 py-2 text-xl font-bold hover:text-orange-600 hover:underline'
+                className='flex justify-center px-4 py-2 text-xl font-bold hover:text-orange-600 hover:underline text-gray-900'
                 onClick={handleClick}
               >
                 {link.title}
