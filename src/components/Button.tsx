@@ -4,6 +4,7 @@ type Props = {
   type: 'submit' | 'button';
   onClick?: () => void;
   title?: string;
+  ariaLabel?: string;
   children?: ReactNode;
 };
 
@@ -31,12 +32,13 @@ export function OutlineButton({ type, onClick, title }: Props) {
   );
 }
 
-export function IconButton({ type, onClick, children }: Props) {
+export function IconButton({ type, onClick, ariaLabel, children }: Props) {
   return (
     <button
       type={type}
       className='text-orange-600 border border-orange-600 hover:bg-orange-600 hover:text-white font-bold rounded-lg text-sm p-3 text-center inline-flex items-center'
       onClick={onClick}
+      aria-label={ariaLabel}
     >
       <span className='h-5 w-5'>{children}</span>
     </button>

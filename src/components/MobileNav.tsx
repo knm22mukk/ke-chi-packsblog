@@ -14,7 +14,11 @@ export default function MobileNav() {
 
   return (
     <>
-      <IconButton type='button' onClick={handleClick}>
+      <IconButton
+        type='button'
+        ariaLabel='テーマ変更ボタン'
+        onClick={handleClick}
+      >
         {menuOpen ? <XMarkIcon /> : <Bars3Icon />}
       </IconButton>
       <div

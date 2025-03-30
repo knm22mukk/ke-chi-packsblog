@@ -16,7 +16,11 @@ export default function ThemeChange() {
   };
 
   return (
-    <IconButton type='button' onClick={handleChange}>
+    <IconButton
+      type='button'
+      onClick={handleChange}
+      ariaLabel='テーマ変更ボタン'
+    >
       {mounted && <> {theme === 'light' ? <MoonIcon /> : <SunIcon />} </>}
     </IconButton>
   );
