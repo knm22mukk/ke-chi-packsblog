@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import '@/globals.css';
 import Navbar from '@/components/Navbar';
+import ThemeChange from '@/components/ThemeChange';
+import ThemeProvider from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'けーちー包装紙材ブログ',
@@ -14,10 +16,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='ja'>
+    <html lang='ja' suppressHydrationWarning>
       <body>
-        <Navbar />
-        {children}
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='light'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <ThemeChange />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
