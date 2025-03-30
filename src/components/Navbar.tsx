@@ -1,6 +1,7 @@
 'use client';
 
 import MobileNav from '@/components/MobileNav';
+import ThemeChange from '@/components/ThemeChange';
 import { navLinks } from '@/const/navLinks';
 import clsx from 'clsx';
 import Image from 'next/image';
@@ -20,10 +21,9 @@ export default function Navbar() {
             alt='けーちーブログロゴ'
           />
           <span className='self-center text-2xl font-bold text-orange-600'>
-            けーちー包装紙材ブログ
+            けーちーブログ
           </span>
         </Link>
-        <MobileNav />
         <div className='hidden w-full lg:block md:w-auto'>
           <ul className='flex items-center font-bold md:space-x-8'>
             {navLinks.map((link) => {
@@ -42,6 +42,12 @@ export default function Navbar() {
               );
             })}
           </ul>
+        </div>
+        <div className='flex space-x-3'>
+          <span className='block lg:hidden'>
+            <MobileNav />
+          </span>
+          <ThemeChange />
         </div>
       </div>
     </nav>
